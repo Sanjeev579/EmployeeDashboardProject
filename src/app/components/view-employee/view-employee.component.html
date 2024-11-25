@@ -1,0 +1,20 @@
+<div class="modal" *ngIf="isVisible">
+    <div class="modal-content">
+      <span class="close" (click)="close()">&times;</span>
+      <h2>Employee Details</h2>
+      <div class="view_emp_modal_body">
+          <div class="view_left">
+            <p><strong>Name:</strong> {{ employee?.name }}</p>
+      <p><strong>Company Name:</strong> {{ employee?.companyName }}</p>
+      <p><strong>Email ID:</strong> {{ employee?.emailId }}</p>
+      <p><strong>Contact No:</strong> {{ employee?.contactNo }}</p>
+      <p><strong>Designation:</strong> {{ employee?.designation }}</p>
+      <p><strong>Avatar:</strong> {{ employee?.avatar.imageUrl }}</p>
+          </div>
+
+          <div class="view_right">
+            <img class="avatar_img" src="{{employee?.avatar.imageUrl}}" alt="">
+          </div>
+      </div>
+    </div>
+  </div>

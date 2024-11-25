@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'employeeManagementApp';
+
+
+
+  constructor(private router: Router) {}
+
+  navigateToAddEmployee() {
+    this.router.navigate(['/employees/add']); // Redirect to the Add Employee page
+  }
+
+
 }

@@ -1,0 +1,32 @@
+<input type="text" [(ngModel)]="searchTerm" placeholder="Search by Name or Email" (input)="onSearch()" class="search-input">
+
+<div class="card-container">
+  <div class="card" *ngFor="let employee of filteredEmployees">
+    <div class="card-header">
+      <h3>{{ employee.name }}</h3>
+      <div class="card-actions">
+        <button class="btn" (click)="editEmployee(employee)">Edit</button>
+        <button class="btn danger_button " (click)="confirmDelete(employee)">Delete</button>
+      </div>
+    </div>
+    <div class="card-body">
+      <p><strong>Company Name:</strong> {{ employee.companyName }}</p>
+      <p><strong>Email ID:</strong> {{ employee.emailId }}</p>
+      <p><strong>Contact No.:</strong> {{ employee.contactNo }}</p>
+      <p><strong>Designation:</strong> {{ employee.designation }}</p>
+    </div>
+    <div class="eye_icon_wrapper center">
+      <button (click)="openEmployeeModal(employee)" class="btn btn-primary icon-button">
+        <i class="fas fa-eye"></i> 
+      </button>
+    </div>
+  </div>
+</div>
+
+<div *ngIf='employees.length <= 0'>
+  <p>
+    No employees
+  </p>
+</div>
+
+<app-view-employee #viewEmployee></app-view-employee>

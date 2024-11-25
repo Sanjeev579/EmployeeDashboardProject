@@ -1,0 +1,69 @@
+<form [formGroup]="employeeForm" (ngSubmit)="onSubmit()" class="employee-form">
+  <h2>Add Employee</h2>
+  
+  <div>
+    <label for="name">Name:</label>
+    <input type="text" id="name" formControlName="name" placeholder="Enter your name">
+    <div *ngIf="employeeForm.get('name')?.invalid && employeeForm.get('name')?.touched">
+      <small>Name is required.</small>
+    </div>
+  </div>
+  
+  <div>
+    <label for="companyName">Company Name:</label>
+    <input type="text" id="companyName" formControlName="companyName" placeholder="Enter company name">
+    <div *ngIf="employeeForm.get('companyName')?.invalid && employeeForm.get('companyName')?.touched">
+      <small>Company Name is required.</small>
+    </div>
+  </div>
+  
+  <div>
+    <label for="emailId">Email ID:</label>
+    <input type="email" id="emailId" formControlName="emailId" placeholder="Enter your email">
+    <div *ngIf="employeeForm.get('emailId')?.invalid && employeeForm.get('emailId')?.touched">
+      <small *ngIf="employeeForm.get('emailId')?.errors?.required">Email ID is required.</small>
+      <small *ngIf="employeeForm.get('emailId')?.errors?.email">Invalid email format.</small>
+    </div>
+  </div>
+  
+  <div>
+    <label for="contactNo">Contact No:</label>
+    <input type="text" id="contactNo" formControlName="contactNo" placeholder="Enter contact number">
+    <div *ngIf="employeeForm.get('contactNo')?.invalid && employeeForm.get('contactNo')?.touched">
+      <small>Contact No is required.</small>
+    </div>
+  </div>
+  
+  <div>
+    <label for="designation">Designation:</label>
+    <select id="designation" formControlName="designation">
+      <option value="" disabled>Select Designation</option>
+      <option value="Software Developer">Software Developer</option>
+      <option value="Senior Software Developer">Senior Software Developer</option>
+      <option value="Quality Assurance">Quality Assurance</option>
+      <option value="Technical Lead">Technical Lead</option>
+    </select>
+    <div *ngIf="employeeForm.get('designation')?.invalid && employeeForm.get('designation')?.touched">
+      <small>Designation is required.</small>
+    </div>
+  </div>
+  
+  <div>
+    <label for="avatar">Avatar:</label>
+    <select id="avatar" formControlName="avatar">
+      <option value="" disabled>Select Avatar</option>
+      <option *ngFor="let avatar of avatars" [value]="avatar">
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/002/002/332/small/ablack-man-avatar-character-isolated-icon-free-vector.jpg"  style="width: 20px; height: 20px;"/> {{ avatar.name }}
+      </option>
+    </select>
+    <div *ngIf="employeeForm.get('avatar')?.invalid && employeeForm.get('avatar')?.touched">
+      <small>Avatar is required.</small>
+    </div>
+  </div>
+  
+  <div class="form-buttons">
+    <button class="btn" type="submit"  [disabled]="employeeForm.invalid">{{ isEditMode ? 'Update' : 'Create' }} Employee</button>
+
+    <button class="btn btn_grey" type="button" (click)="goback()">Back</button>
+  </div>
+</form>
