@@ -28,10 +28,12 @@
   
   <div>
     <label for="contactNo">Contact No:</label>
-    <input type="text" id="contactNo" formControlName="contactNo" placeholder="Enter contact number">
+    <input type="number" id="contactNo" formControlName="contactNo" placeholder="Enter contact number" maxlength="10" pattern="[0-9]{10}">
     <div *ngIf="employeeForm.get('contactNo')?.invalid && employeeForm.get('contactNo')?.touched">
-      <small>Contact No is required.</small>
+      <small *ngIf="employeeForm.get('contactNo')?.errors?.required">Contact No is required.</small>
+      <small *ngIf="employeeForm.get('contactNo')?.errors?.maxlength || employeeForm.get('contactNo')?.errors?.pattern">Contact No must be 10 digits.</small>
     </div>
+    
   </div>
   
   <div>

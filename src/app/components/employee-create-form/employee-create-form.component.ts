@@ -36,7 +36,7 @@ export class EmployeeCreateFormComponent implements OnInit {
       name: ['', Validators.required],
       companyName: ['', Validators.required],
       emailId: ['', [Validators.required, Validators.email]],
-      contactNo: ['', Validators.required],
+      contactNo: ['', [Validators.required,Validators.maxLength(10)]],
       designation: ['', Validators.required],
       avatar: ['', Validators.required]
     });

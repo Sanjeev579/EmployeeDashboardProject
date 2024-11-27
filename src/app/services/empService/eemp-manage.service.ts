@@ -11,7 +11,7 @@ export class EempManageService {
       "name": "Sanjeev",
       "companyName": "Infosys ",
       "emailId": "sanjeev@gmail.com",
-      "contactNo": "975372822",
+      "contactNo": 975372822,
       "designation": "Senior Software Developer",
       "avatar": {
         name: "Avatar3",

@@ -8,7 +8,7 @@ export interface Employee {
   name: string;
   companyName: string;
   emailId: string;
-  contactNo: string;
+  contactNo: number;
   designation: string;
   avatar: Avatar; // Updated to be an object with name and imageUrl
 }
