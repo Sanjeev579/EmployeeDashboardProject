@@ -4,9 +4,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { EempManageService } from 'src/app/services/empService/eemp-manage.service';
 
 @Component({
-  selector: 'app-employee-create-form',
-  templateUrl: './employee-create-form.component.html',
-  styleUrls: ['./employee-create-form.component.scss']
+    selector: 'app-employee-create-form',
+    templateUrl: './employee-create-form.component.html',
+    styleUrls: ['./employee-create-form.component.scss'],
+    standalone: false
 })
 export class EmployeeCreateFormComponent implements OnInit {
 

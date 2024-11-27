@@ -5,9 +5,10 @@ import { EempManageService } from 'src/app/services/empService/eemp-manage.servi
 import { ViewEmployeeComponent } from '../view-employee/view-employee.component';
 
 @Component({
-  selector: 'app-employeelist',
-  templateUrl: './employeelist.component.html',
-  styleUrls: ['./employeelist.component.scss']
+    selector: 'app-employeelist',
+    templateUrl: './employeelist.component.html',
+    styleUrls: ['./employeelist.component.scss'],
+    standalone: false
 })
 export class EmployeelistComponent implements OnInit {
 

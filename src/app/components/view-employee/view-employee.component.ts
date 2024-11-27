@@ -2,9 +2,10 @@ import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { Employee } from 'src/app/employee.model';
 
 @Component({
-  selector: 'app-view-employee',
-  templateUrl: './view-employee.component.html',
-  styleUrls: ['./view-employee.component.scss']
+    selector: 'app-view-employee',
+    templateUrl: './view-employee.component.html',
+    styleUrls: ['./view-employee.component.scss'],
+    standalone: false
 })
 export class ViewEmployeeComponent implements OnInit {
 
