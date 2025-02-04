@@ -1,0 +1,42 @@
+
+<ul>
+    <li>
+        <div>
+
+            <!--it will have two one will always be question and other will contain answers -->
+            <!-- Questions -->
+            <div>
+                <p class="fw-bold">
+                    Question
+                </p> <hr>
+                <p>
+                    Problem Explaination - How we can display even numbers in counter in child components view when button is clicked from parent component. 
+                </p>
+            </div>
+            <!-- Answers Div-->
+             <div class="border border-primary p-2">
+               
+                <p class="text-success">Answer </p>
+                <div class="d-flex justify-content-around">
+                    <button class="btn btn-primary" (click)="incrementCounter()">
+                        Increment Counter
+                    </button>
+                    
+                    <button class="btn btn-success" (click)="resetCounter()">
+                        Reset
+                    </button>
+
+                    <button class="btn btn-danger" (click)="decrementCounter()">
+                        Decrement Counter
+                    </button>
+                </div>
+                <hr>
+                <div class="d-flex justify-content-center">
+                    <app-child [countervalue]="count"></app-child>
+                </div>
+             </div>
+        </div>
+    </li>
+</ul>
+
+
