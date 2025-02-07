@@ -37,6 +37,51 @@
              </div>
         </div>
     </li>
+
+
+    <li>
+        <div>
+
+            <!--it will have two one will always be question and other will contain answers -->
+            <!-- Questions -->
+            <div>
+                <p class="fw-bold">
+                    Question
+                </p> <hr>
+                <p>
+                    Async pipe
+                </p>
+            </div>
+            <!-- Answers Div-->
+             <div class="border border-primary p-2">
+               
+                <p class="text-success">Answer </p>
+                <div class="">
+                 <p>
+                    The async pipe in Angular is a built-in pipe that automatically subscribes to an Observable or Promise and returns the most recent value it emitted.
+
+                    <br> In the below example we are using async pipe to get the value from the observable and display it in the view.
+
+                    <br>
+                    <br>
+                    citiesObservable - is the observable
+                 </p>
+
+                 <div>
+                    <ul>
+                        <li *ngFor="let city of citiesObservable | async">
+                            {{city}}
+                        </li>
+                    </ul>
+
+                 </div>
+
+                   
+                </div>
+                
+             </div>
+        </div>
+    </li>
 </ul>
 
 

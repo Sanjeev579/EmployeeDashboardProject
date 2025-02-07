@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ChildComponent } from '../child/child.component';
+import { HttpService } from 'src/app/services/http.service';
 
 @Component({
   selector: 'app-parent',
@@ -9,8 +10,12 @@ import { ChildComponent } from '../child/child.component';
 })
 export class ParentComponent implements OnInit{
   
+  constructor(private http:HttpService){
+
+  }
 
   ngOnInit(){
+    console.log(this.http.serviceVal,"Value inside parent component");
   }
 
 

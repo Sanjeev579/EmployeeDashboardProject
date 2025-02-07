@@ -8,6 +8,8 @@ import { EmployeelistComponent } from './components/employeelist/employeelist.co
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { ViewEmployeeComponent } from './components/view-employee/view-employee.component'; // Import FormsModule
+import { CommonModule } from '@angular/common';
+import { httpInterceptor } from './http.interceptor';
 
 
 @NgModule({
@@ -15,15 +17,22 @@ import { ViewEmployeeComponent } from './components/view-employee/view-employee.
     AppComponent,
     EmployeeCreateFormComponent,
     EmployeelistComponent,
-    ViewEmployeeComponent
+    ViewEmployeeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    CommonModule,
   ],
-  providers: [],
+  providers: [
+    {
+    provide: 'HTTP_INTERCEPTORS',
+      useValue: httpInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
