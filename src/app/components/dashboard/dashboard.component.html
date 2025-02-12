@@ -128,4 +128,60 @@
             </div>
         </div>
     </li>
+
+
+    <li>
+        <div>
+
+            <!--it will have two one will always be question and other will contain answers -->
+            <!-- Questions -->
+            <div>
+                <p class="fw-bold">
+                    Question
+                </p>
+                <hr>
+                <p>
+                    Create an angular app that displays a todo list , implement CRUD operations on the TODO list and display list in sorted format by priority.
+                </p>
+            </div>
+            <!-- Answers Div-->
+            <div class="border border-primary p-2">
+
+                <p class="text-success">Answer </p>
+                <div>
+                    <p>To Do list</p>
+
+                    <div class="container">
+                        <form [formGroup]="todoForm" (ngSubmit)="addToToDo()">
+                          <label for="name">To-Do Name:</label>
+                          <input id="name" formControlName="name" class="form-control" placeholder="Enter task name" />
+                          <div *ngIf="todoForm.controls.name.invalid && todoForm.controls.name.touched" class="error">
+                            Name is required (Min: 3 chars)
+                          </div>
+                      
+                          <label for="priority">Priority:</label>
+                          <select id="priority" formControlName="priority" class="form-select">
+                            <option value="High">High</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Low">Low</option>
+                          </select>
+                      
+                          <button type="submit" [disabled]="todoForm.invalid" class="btn btn-primary mt-2">
+                            Add To-Do
+                          </button>
+                        </form>
+                      
+                        <h3 class="mt-3">To-Do List</h3>
+                        <ul class="list-group">
+                          <li *ngFor="let todo of toDoList" class="list-group-item">
+                            {{ todo.name }} - <strong>{{ todo.priority }}</strong>
+                          </li>
+                        </ul>
+                      </div>
+                      
+                </div>
+
+            </div>
+        </div>
+    </li>
 </ul>
